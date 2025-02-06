@@ -5,6 +5,7 @@ import Login from "../pages/login/Login";
 import { Signup } from "../pages/signup/Signup";
 import AllProducts from "../pages/allproducts/AllProducts";
 import Cart from "../pages/cart/Cart";
+import EditProfile from "../pages/editprofile/EditProfile";
 
 export let myRoutes = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ export let myRoutes = createBrowserRouter([
                 path:"/allproducts",
                 element:<AllProducts/>
             },
+            {
+                path:`/editprofile/:id`,
+                element:<EditProfile/>
+            }
         ]
     }
 ])

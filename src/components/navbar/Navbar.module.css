@@ -7,9 +7,11 @@
     justify-content: space-between;
     padding: 0 20px;
     color: white;
+    position: sticky;
+    /* top: 0 */
 }
 
-#navbar ul{
+#navbar > ul{
     display: flex;
     gap: 20px;
     font-size: 18px;
@@ -17,13 +19,16 @@
     text-transform: capitalize;
 }
 
-#navbar ul li{
+#navbar > ul li{
     border: 1px solid black;
     padding: 5px 20px;
     border-radius:8px;
+    display: flex;
+    align-items: center;
 }
 
 .active{
     color: aliceblue;
-    background-color: black;
+    background-color: rgb(48, 75, 154);
+    border: 1px solid white;
 }

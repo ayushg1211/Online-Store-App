@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Cart.module.css";
 import axios from "axios";
+import CartItem from "../../components/cartitem/CartItem";
 
 const Cart = () => {
   let uId = localStorage.getItem("userid");
@@ -18,45 +19,18 @@ const Cart = () => {
   }, []);
 
   return (
-    <>
-      <section>
+    <section className={styles.cart}>
+      <section className={styles.cartCont}>
         {loading ? (
           <h1>Loading...</h1>
-        ) : (
-            <h1>Cart</h1>
-        //   userDetails.cart.map((product) => {
-        //    return <div key={product.id} 
-        //     // className={styles.productCard}
-        //     >
-        //       <img
-        //         src={product.image}
-        //         alt={product.title}
-        //         // className={styles.productImage}
-        //       />
-        //       <h2 
-        //     //   className={styles.productTitle}
-        //       >
-        //         {product.title.slice(0, 30)}...
-        //       </h2>
-        //       <p 
-        //     //   className={styles.productPrice}
-        //       >${product.price}</p>
-        //       <p 
-        //     //   className={styles.productDescription}
-        //       >
-        //         {product.description.slice(0, 50)}...
-        //       </p>
-        //       <button
-        //         // className={styles.addToCartButton}
-        //         onClick={() => handleAddToCart(product)}
-        //       >
-        //         Add to Cart
-        //       </button>{" "}
-        //     </div>;
-        //   })
-        )}
+        ) : (userDetails.cart.length !=0 ? (
+          userDetails.cart.map((product) => {
+            return <CartItem key={product.id} product={product} setUserDetails={setUserDetails} />;
+          })
+        ) : <h1>Cart is Empty</h1>)}
       </section>
-    </>
+      <section className={styles.amountCont}>Bill Section</section>
+    </section>
   );
 };
 

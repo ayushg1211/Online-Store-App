@@ -13,9 +13,9 @@ const Navbar = () => {
     <nav id={styles.navbar}>
       <figure>logo</figure>
       <ul>
-        <li onClick={()=>{setActive(1)}} className={isActive==1 ? styles.active : ""}>
+        <li className={isActive==1 ? styles.active : ""}>
           <NavLink
-            // className={({ isActive }) => (isActive ? styles.active : "")}
+            className={({ isActive }) => (isActive ? setActive(1) : "")}
             to="/"
           >
             home
@@ -25,18 +25,18 @@ const Navbar = () => {
         {user_id ? (
           <Fragment>
             <li
-            onClick={()=>{setActive(2)}} className={isActive==2 ? styles.active : ""}
+             className={isActive==2 ? styles.active : ""}
             >
               <NavLink
-                // className={({ isActive }) => (isActive ? styles.active : "")}
+                className={({ isActive }) => (isActive ? setActive(2) : "")}
                 to="/allproducts"
               >
                 All Products
               </NavLink>
             </li>
-            <li onClick={()=>{setActive(3)}} className={isActive==3 ? styles.active : ""}>
+            <li  className={isActive==3 ? styles.active : ""}>
               <NavLink
-                // className={({ isActive }) => (isActive ? styles.active : "")}
+                className={({ isActive }) => (isActive ? setActive(3) : "")}
                 to="/cart"
               >
                 Cart
@@ -52,17 +52,17 @@ const Navbar = () => {
           </Fragment>
         ) : (
           <Fragment>
-            <li onClick={()=>{setActive(4)}} className={isActive==4 ? styles.active : ""}>
+            <li  className={isActive==4 ? styles.active : ""}>
               <NavLink
-                // className={({ isActive }) => (isActive ? styles.active : "")}
+                className={({ isActive }) => (isActive ? setActive(4) : "")}
                 to="/login"
               >
                 login
               </NavLink>
             </li>
-            <li onClick={()=>{setActive(5)}} className={isActive==5 ? styles.active : ""}>
+            <li  className={isActive==5 ? styles.active : ""}>
               <NavLink
-                // className={({ isActive }) => (isActive ? styles.active : "")}
+                className={({ isActive }) => (isActive ? setActive(5) : "")}
                 to="/signup"
               >
                 sign up

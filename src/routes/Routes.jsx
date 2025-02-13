@@ -6,6 +6,7 @@ import { Signup } from "../pages/signup/Signup";
 import AllProducts from "../pages/allproducts/AllProducts";
 import Cart from "../pages/cart/Cart";
 import EditProfile from "../pages/editprofile/EditProfile";
+import PrivateRoutes from "./PrivateRoutes";
 
 export let myRoutes = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ export let myRoutes = createBrowserRouter([
             },
             {
                 path:"/cart",
-                element:<Cart/>
+                element:<PrivateRoutes><Cart/></PrivateRoutes>
             },
             {
                 path:"/login",
@@ -30,11 +31,11 @@ export let myRoutes = createBrowserRouter([
             },
             {
                 path:"/allproducts",
-                element:<AllProducts/>
+                element:<PrivateRoutes><AllProducts/></PrivateRoutes>
             },
             {
                 path:`/editprofile/:id`,
-                element:<EditProfile/>
+                element:<PrivateRoutes><EditProfile/></PrivateRoutes>
             }
         ]
     }

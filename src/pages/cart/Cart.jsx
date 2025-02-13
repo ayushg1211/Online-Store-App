@@ -23,11 +23,11 @@ const Cart = () => {
       <section className={styles.cartCont}>
         {loading ? (
           <h1>Loading...</h1>
-        ) : (userDetails.cart.length !=0 ? (
-          userDetails.cart.map((product) => {
-            return <CartItem key={product.id} product={product} setUserDetails={setUserDetails} />;
-          })
-        ) : <h1>Cart is Empty</h1>)}
+        ) : ((!("cart" in userDetails) || userDetails.cart.length ==0) ? (
+          <h1>Cart is Empty</h1>
+        ) : userDetails.cart.map((product) => {
+          return <CartItem key={product.id} product={product} setUserDetails={setUserDetails} />;
+        }))}
       </section>
       <section className={styles.amountCont}>Bill Section</section>
     </section>
